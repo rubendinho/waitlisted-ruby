@@ -12,12 +12,14 @@ module Waitlisted
       end
 
       protected
-      def post(*args)
-        Waitlisted.client.post(*args)
+      def post(url, params)
+        data = {}
+        data[resource_name] = params
+        Waitlisted.client.post(url, data)
       end
 
-      def get(*args)
-        Waitlisted.client.get(*args)
+      def get(url, params)
+        Waitlisted.client.get(url, params)
       end
 
       def parse_response(resp)

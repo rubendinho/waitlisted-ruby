@@ -9,7 +9,7 @@ describe Waitlisted::Reservation do
     end
     it "should create a valid reservaiton" do
       VCR.use_cassette("reservation") do
-        @reservation = Waitlisted::Reservation.create({reservation: {email: "test@test.com"}})
+        @reservation = Waitlisted::Reservation.create({email: "test@test.com"})
       end
       expect(@reservation.position).not_to be_nil
     end
