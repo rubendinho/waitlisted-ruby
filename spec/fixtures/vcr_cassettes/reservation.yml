@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://waitlisted.app.waitlisted.co/api/v1/reservation
+    body:
+      encoding: UTF-8
+      string: reservation%5Bemail%5D=test%40test.com
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"a8f60142c2d27ebbe277d79d63269e46"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=POST; path=/
+      X-Request-Id:
+      - fb8b2ae5-d4d9-422b-8845-38ec4b476357
+      X-Runtime:
+      - '0.054027'
+      X-Powered-By:
+      - Phusion Passenger 4.0.56
+      Date:
+      - Tue, 07 Jul 2015 04:58:40 GMT
+      Server:
+      - nginx/1.6.2 + Phusion Passenger 4.0.56
+    body:
+      encoding: UTF-8
+      string: '{"reservation":{"id":"8fab999faa94274f1a482b601f4f1155","uuid":"8fab999faa94274f1a482b601f4f1155","affiliate":"1ec3b2cb4dcb","email":"test@test.com","name":null,"position":33},"meta":{"total":33}}'
+    http_version: 
+  recorded_at: Tue, 07 Jul 2015 04:58:41 GMT
+- request:
+    method: get
+    uri: https://waitlisted.app.waitlisted.co/api/v1/reservation?email=test@test.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"a8f60142c2d27ebbe277d79d63269e46"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b9a756de-f50b-436b-9d7f-e74a7c89c33e
+      X-Runtime:
+      - '0.014457'
+      X-Powered-By:
+      - Phusion Passenger 4.0.56
+      Date:
+      - Tue, 07 Jul 2015 05:00:16 GMT
+      Server:
+      - nginx/1.6.2 + Phusion Passenger 4.0.56
+    body:
+      encoding: UTF-8
+      string: '{"reservation":{"id":"8fab999faa94274f1a482b601f4f1155","uuid":"8fab999faa94274f1a482b601f4f1155","affiliate":"1ec3b2cb4dcb","email":"test@test.com","name":null,"position":33},"meta":{"total":33}}'
+    http_version: 
+  recorded_at: Tue, 07 Jul 2015 05:00:17 GMT
+recorded_with: VCR 2.9.3
