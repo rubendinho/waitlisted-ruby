@@ -23,13 +23,21 @@ module Waitlisted
       end
 
       def parse_response(resp)
-        self.new(JSON.parse(resp))
+        hash = JSON.parse(resp)
+        raise_error(hash['errors']) if hash['errors']
+        response = self.new(hash)
+        response
       end
 
       def api_base(route)
         "/api/v1#{route}"
       end
 
-    end  
+      def raise_error(errors)
+        errors.each do |field, message|
+          raise StandardError, [field, message].join(' ')
+        end
+      end
+    end
   end
 end

@@ -13,6 +13,11 @@ describe Waitlisted::Reservation do
       end
       expect(@reservation.position).not_to be_nil
     end
+    it "should raise an exception of already reserved" do
+      VCR.use_cassette("already_reserved") do
+        expect{Waitlisted::Reservation.create({email: "test@test.com"})}.to raise_error(StandardError, /email has already been taken/)
+      end
+    end
     it "should pull an existing reservation" do
       VCR.use_cassette("reservation") do
         @reservation = Waitlisted::Reservation.show({email: "test@test.com"})
