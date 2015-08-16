@@ -28,6 +28,13 @@ Waitlisted.configure do |config|
 end
 ```
 
+Or you can set the url via an environment variable
+
+```
+WAITLISTED_URL: "https://mysite.app.waitlisted.co/"
+```
+
+
 Then create a reservation:
 
 ```ruby

@@ -35,7 +35,7 @@ module Waitlisted
 
       def raise_error(errors)
         errors.each do |field, message|
-          raise StandardError, [field, message].join(' ')
+          raise Waitlisted::ValidationError, [field, message].join(' ')
         end
       end
     end

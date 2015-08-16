@@ -1,7 +1,6 @@
 module Waitlisted
   module Client
     def client
-      puts Waitlisted.configuration.url.inspect
       raise StandardError, 
         "
         You must specify a waitlisted url in 
