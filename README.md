@@ -42,6 +42,14 @@ Then create a reservation:
 #  => #<Waitlisted::Reservation:0x00000102980258 @id="dfc56acbc7e0b249866d49fc27581816", @uuid="dfc56acbc7e0b249866d49fc27581816", @affiliate="71c1e7b5cdfd", @email="test@myemail.com", @name=nil, @position=1, @meta={"total"=>1}>
 ```
 
+You can also query the api for an exisiting reservation:
+```ruby
+Waitlisted::Reservation.find(email: "test@test.com")
+# => #<Waitlisted::Reservation:0x007fbecac2c3c0 @id="f12b29bd8a7ca8cfae639539e8507bad", @uuid="f12b29bd8a7ca8cfae639539e8507bad", @affiliate="fd2c7e6802c9", @email="test@test.com", @name=nil, @position=1, @meta={"total"=>1}>
+```
+
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.

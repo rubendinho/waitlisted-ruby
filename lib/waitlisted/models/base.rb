@@ -11,6 +11,8 @@ module Waitlisted
         parse_response(resp.body)
       end
 
+      alias :find :show
+
       protected
       def post(url, params)
         data = {}

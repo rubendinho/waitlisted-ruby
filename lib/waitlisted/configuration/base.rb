@@ -1,10 +1,12 @@
 module Waitlisted
   module Configuration
     module Base
-      if ENV['WAITLISTED_DOMAIN']
-        @@configuration = OpenStruct.new(url: "#{ENV['WAITLISTED_DOMAIN']}")
-      else
-        @@configuration = OpenStruct.new
+      def reset
+        if ENV['WAITLISTED_URL']
+          @@configuration = OpenStruct.new(url: "#{ENV['WAITLISTED_URL']}")
+        else
+          @@configuration = OpenStruct.new
+        end
       end
       def configure(&block)
         yield configuration
@@ -12,6 +14,10 @@ module Waitlisted
 
       def configuration
         @@configuration
+      end
+
+      def self.extended(base)
+        base.reset
       end
     end
   end

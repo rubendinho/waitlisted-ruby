@@ -12,5 +12,5 @@ require "waitlisted/models/reservation"
 
 module Waitlisted
   extend Configuration::Base
-  extend Client
+  include Client
 end

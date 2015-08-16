@@ -1,7 +1,7 @@
 module Waitlisted
   module Client
     def client
-      raise StandardError, 
+      raise Waitlisted::ConfigurationError, 
         "
         You must specify a waitlisted url in 
         the configuration block. 
